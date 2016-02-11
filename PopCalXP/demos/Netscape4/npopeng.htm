@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>PopCalendarXP 9.8.310 Commercial Edition - Copyright 2003-2007 Idemfactor Solutions, Inc.</title>
+<title>PopCalendarXP 10.0.0 - Copyright Idemfactor Solutions, Inc.</title>
 <style type="text/css">
 .cxpNS {text-align:left;}
 .cxpLT {text-decoration:line-through;}
@@ -8,7 +8,6 @@
 .cxpFB {font-weight:bold;}
 </style>
 <script>
-// WARNING: Do NOT make any modification to this file without proper permit.
 var gd=new Date(), gToday=[gd.getFullYear(),gd.getMonth()+1,gd.getDate()];
 var ua=navigator.userAgent.toLowerCase();
 var MAC=ua.indexOf('mac')!=-1,NN4=true,OP=NS6=IE5=IE4=IE=KO3=KO=SA=SA1=GK=OP8=false;
@@ -17,7 +16,7 @@ var gTheme=this.name.split(":");
 var gCurMonth=eval(gTheme[0]); gCurMonth=fCalibrate(gCurMonth[0],gCurMonth[1]);
 var gContainer=self,gDays=[31,31,28,31,30,31,30,31,31,30,31,30,31];
 var fOnResize,fRepaint,fHoliday,fOnChange,fAfterSelected,fOnDrag,gcOtherDayBG,fOnWeekClick,fIsSelected,fParseInput,fFormatInput,fOnDoWClick,fOnload;
-var __agenda=[], popkey=["Lite"], flatkey=["Lite"], __stub=[];
+var __agenda=[], __stub=[];
 var MILLIDAY=86400000, giInitDelay=200, _lineThru=true, _noBound=false, _mcafee=false, _animPop=NN4||IE&&!IE4&&!MAC, _animInt=20, _preferOOR=true, gbHideCalMiddle=false, _cacheOther=true;
 
 
@@ -106,7 +105,6 @@ for (var i=0; i<_nn4_ids.length; i++) {
 }
 </script>
 <script>document.write("<lin"+"k rel='stylesheet' type='text/css' href='"+gTheme[1]+".css?"+(_cacheOther?0:gd.getTime())+"'>");</script>
-<script>document.write("<scr"+"ipt src='li"+"cen"+"ce.j"+"s?"+gd.getTime()+"' type='text/javascript'></scr"+"ipt>");</script>
 <script>
 giSat=(6-giFirstDOW)%7;
 giSun=(7-giFirstDOW)%7;
@@ -411,13 +409,6 @@ function fHint(id) {
 	gContainer.status=__tis[id];
 }
 
-function flic() {
-	var ht=eval("se"+"lf.lo"+"cati"+"on.h"+"ost"),sh=ht?ht.toLowerCase().split(":")[0]:"",sk=eval("po"+"pke"+"y"),ak,ls=sh.length,l;
-	for(var j=1;j<sk.length;j++){ak=[parseInt(sk[j].substr(sk[j].length-2,2),10)];if(ak[0]==0||ak[0]>1&&sh.indexOf('.')<0||!sh||sh=="lo"+"calh"+"ost")return true;
-	else{l=ak[0]==1?ls:ak[0];if(l>ls||l<ls&&sh.charCodeAt(ls-l-1)!=46)continue;for(var i=1;i<=l;i++)ak[i]=sh.charCodeAt(ls-l+i-1);
-	if(ak[0]<10)ak[0]="0"+ak[0];if("2"+ak.reverse().join("")==sk[j])return true;}}return false;
-}
-
 var __sWH=document.classes.WeekHead.all.backgroundColor,__sCH=document.classes.CalHead.all.backgroundColor;
 var __sLyr="' height='"+(giHeadHeight-giHeadTop)+"' top='"+giHeadTop+"'>",
 __sWH="<TD "+(__sWH?"bgcolor="+__sWH:"")+"><ilayer><layer class='WeekHead' width='"+giWeekWidth+__sLyr,
@@ -479,7 +470,6 @@ function fDrawCal(y,m) {
 		}
 		a.push("</FORM>");
 		if (!gbHideCalMiddle){
-			if (!flic()) gdEnd=new Date(0);
 			a.push("<TR class='CalMiddle'><TD class='cxpNS'><ilayer><layer id='innerDiv' ");
 			if(guCalBG)a.push("background='",guCalBG,"'");
 			a.push(" bgColor='",gcCalFrame,"'><TABLE width='100%' ",gsInnerTable," ><TR>");
