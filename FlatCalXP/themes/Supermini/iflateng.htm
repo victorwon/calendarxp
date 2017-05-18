@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>FlatCalendarXP 10.0.0 - Copyright Idemfactor Solutions, Inc.</title>
+<title>FlatCalendarXP 10.0.1 - Copyright Idemfactor Solutions, Inc.</title>
 <script type='text/javascript'>
 var gd=new Date(), gToday=[gd.getFullYear(),gd.getMonth()+1,gd.getDate()];
 var ua=navigator.userAgent.toLowerCase();
@@ -9,6 +9,20 @@ var MAC=/mac/.test(ua),OP=!!self.opera,WEBTV=/webtv/.test(ua),IE=/msie/.test(ua)
 var NN4=false,NS6=ua.indexOf("netscape6/6.0")!=-1,IE4=IE&&!document.getElementById,IE5=IE&&![].push&&!IE4;
 var gfSelf=fGetById(parent.document,self.name);
 var gTheme=self.name.split(":");
+if (/[\\'("`;\r\n]/.test(self.name) 
+    || /[\.]/.test(gTheme[0]) 
+    || (gTheme[2]&&gTheme[2].substring(0,6)=="share[" && /[\.]/.test(gTheme[2]))
+    || /[\.]/.test(gTheme[3])) {
+    var offendingName = self.name;
+    // Set default values for subsequent script tags
+    self.name="gToday:normal:agenda.js";
+    gTheme=self.name.split(":");
+    var err = ("This version of CalendarXP tries to avoid malicious XSS input but may fail passing benign parameters." 
+        + "\n******** Offending iframe name: ********\n" + offendingName + "\n************************\n");
+    console.log(err);
+    alert(err);
+    throw new Error(err);
+}
 var gCurMonth=eval(gTheme[0]); gCurMonth=fCalibrate(gCurMonth[0],gCurMonth[1]);
 var gContainer=parent,gDays=[31,31,28,31,30,31,30,31,31,30,31,30,31],g445=[1,5,9,14,18,22,27,31,35,40,44,48,53];
 var fOnResize,fRepaint,fHoliday,fOnChange,fAfterSelected,fOnDrag,gcOtherDayBG,fOnWeekClick,fIsSelected,fParseInput,fFormatInput,fOnDoWClick,fOnload;
