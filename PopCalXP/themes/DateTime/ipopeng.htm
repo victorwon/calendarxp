@@ -140,7 +140,7 @@ function fIsShown() {
 	return gfSelf.offsetTop>-100;
 }
 
-document.write("<scr"+"ipt type='text/javascript' "+_charset+" src='"+gTheme[1]+".js?"+(_cacheOther?0:gd.getTime())+"'></scr"+"ipt>");
+document.write("<scr"+"ipt type='text/javascript' "+_charset+" src='./"+gTheme[1]+".js?"+(_cacheOther?0:gd.getTime())+"'></scr"+"ipt>");
 </script>
 </head>
 <body leftmargin=0 topmargin=0 marginwidth=0 marginheight=0 hspace=0 vspace=0 onload="fInitRange();if(fOnload)fOnload()" onselectstart="return false" ondraggesture="return false" ondragstart="return false" oncontextmenu="return false" onmouseup="fDragIt(0,0,0,2,event)">
@@ -148,7 +148,7 @@ document.write("<scr"+"ipt type='text/javascript' "+_charset+" src='"+gTheme[1]+
 var gdBegin,gdEnd,gcbMon,gcbYear,giSat,giSun,gdCtrl=new Object(),gcTemp,gRange=[],__cal=[];
 for (var i=0;i<6;i++) { __cal[i]=[]; for (var j=0;j<7;j++) __cal[i][j]=[]; }
 with (document) {
-	write("<scr"+"ipt type='text/javascript' "+_charset+" src='"+(gTheme[4]?gTheme[4]+(/\?/.test(gTheme[4])?"&":"?"):"plugins.js?")+(_cacheOther?0:gd.getTime())+"'></scr"+"ipt>");
+	write("<scr"+"ipt type='text/javascript' "+_charset+" src='./"+(gTheme[4]?gTheme[4]+(/\?/.test(gTheme[4])?"&":"?"):"plugins.js?")+(_cacheOther?0:gd.getTime())+"'></scr"+"ipt>");
 	write("<lin"+"k rel='stylesheet' type='text/css' "+_charset+" href='"+gTheme[1]+".css?"+(_cacheOther?0:gd.getTime())+"'>");
 }
 </script>
@@ -662,7 +662,7 @@ if (gbShareAgenda==true) {
 	if (!eval(gsAgShared)) eval(gsAgShared+"=[]");
 	if (__isAS) __stub[0]=setInterval("fAgReady('"+gTheme[2].split('[')[1].split(']')[0]+"')",350);
 }
-if (gTheme[2]&&!__isAS) document.write("<scr"+"ipt type='text/javascript' "+_charset+" src='"+gTheme[2]+(gbCacheAgenda?"":(/\?/.test(gTheme[2])?"&":"?")+gd.getTime())+"'></scr"+"ipt>");
+if (gTheme[2]&&!__isAS) document.write("<scr"+"ipt type='text/javascript' "+_charset+" src='./"+gTheme[2]+(gbCacheAgenda?"":(/\?/.test(gTheme[2])?"&":"?")+gd.getTime())+"'></scr"+"ipt>");
 </script>
 <a href="http://www.calendarxp.net" style="display:none">JavaScript Date Picker</a><a href="http://www.idemfactor.com" style="display:none">Idemfactor Solutions Inc.</a>
 <script type='text/javascript'>
